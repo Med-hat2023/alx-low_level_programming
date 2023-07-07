@@ -1,29 +1,25 @@
 #include "main.h"
-#include <stdio.h>
+#include <stddef.h>
+
 /**
- * _strpbrk - prints the consecutive caracters of s1 that are in s2.
- * @s: source string
- * @accept: searching string
- *
- * Return: new string.
+ * _strpbrk - This is my function
+ * @s: This is my entry
+ * @accept: This is my second entry
+ * Return: This is my return
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i, j;
+	unsigned int a, b;
 
-	for (i = 0; *(s + i); i++)
+	for (a = 0; s[a] != '\0'; a++)
 	{
-		for (j = 0; *(accept + j); j++)
+		for (b = 0; accept[b] != '\0'; b++)
 		{
-			if (*(s + i) == *(accept + j))
+			if (accept[b] == s[a])
 			{
-				break;
+				return (&s[a]);
 			}
 		}
-		if (*(accept + j) != '\0')
-		{
-			return (s + i);
-		}
 	}
-	return (0);
+	return (NULL);
 }

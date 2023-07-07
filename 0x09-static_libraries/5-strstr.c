@@ -1,43 +1,34 @@
 #include "main.h"
+#include <stdio.h>
+
 /**
- * _strstr - prints the consecutive caracters of s1 that are in s2.
- * @haystack: source string
- * @needle: searching string
+ * _strstr - locates a substring inside a string
  *
- * Return: new string.
+ * @haystack: string to search
+ * @needle: substring to search for
+ * Return: returns pointer to location of substring inside haystack or NULL
  */
+
 char *_strstr(char *haystack, char *needle)
 {
-	while (*haystack)
-	{
-		if ((*haystack == *needle && coincidence(haystack, needle) == 1) || !*needle)
-		{
-			return (haystack);
-		}
-		else
-		{
-			haystack++;
-		}
-	}
-	return (0);
-}
-/**
- * coincidence - define if the string b is inside a.
- * @a: source string
- * @b: string to be searched
- *
- * Return: 1 if there is coincidence, otherwise 0.
- */
-int coincidence(char *a, char *b)
-{
-	while (*b && *b == *a)
-	{
-		b++;
-		a++;
-	}
+	int i;
 
-	if (*b == '\0')
-		return (1);
-	else
-		return (0);
+	i = 0;
+	while (haystack[i] != '\0')
+	{
+		int j, start;
+
+		start = i;
+		j = 0;
+		while (haystack[i] == needle[j] &&
+		       needle[j] != '\0' && haystack[i] != '\0')
+		{
+			i++;
+			j++;
+		}
+		if (needle[j] == '\0')
+			return (haystack + start);
+		i = start + 1;
+	}
+	return (NULL);
 }
