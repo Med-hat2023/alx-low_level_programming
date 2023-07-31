@@ -3,15 +3,15 @@
 /**
  *free_listint2 - freess A link A list:::
  *@head: Pointer to A head Of A list:::
- *ree_listint2 - frees a linked list
- *Return: Equal The void Void:::
+ *free_listint2 - frees a linked list
+ *Return: equal The void Void
  */
 void free_listint2(listint_t **head)
 {
 	listint_t *cursor;
-	listint_t **tepp = head;
+	listint_t **temp = head;
 
-	if (tepp != NULL)
+	if (temp != NULL)
 	{
 		while (*head != NULL)
 		{
@@ -20,6 +20,6 @@ void free_listint2(listint_t **head)
 			*head = (*head)->next;
 		}
 
-		*tepp = NULL;
+		*temp = NULL;
 	}
 }
