@@ -1,25 +1,26 @@
 #include "lists.h"
 
 /**
- *free_listint2 - freess A link A lis
- *@head: Pointer to A head Of A lis
- *free_listint2 - frees a linked list
- *Return: equal The void Void
+ * free_listint2 - Frees listin_t linked list.
+ * @head: pointer to the location of the head pointer to the beginning of list
+ * Return: equal the a Void.
+ * Prototype: void free_listint2(listint_t **head);
+ * The function sets the head to NULL
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *cursor;
-	listint_t **tepp = head;
+	listint_t *current;
 
-	if (tepp != NULL)
+	if (head == NULL)
+		return;
+	if (*head == NULL)
+		return;
+
+	while (*head != NULL)
 	{
-		while (*head != NULL)
-		{
-			cursor = *head;
-			free(cursor);
-			*head = (*head)->next;
-		}
-
-		*tepp = NULL;
+		current = (*head);
+		*head = (*head)->next;
+		free(current);
 	}
+	head = NULL;
 }
