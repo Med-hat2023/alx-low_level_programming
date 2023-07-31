@@ -1,17 +1,17 @@
 #include "lists.h"
 
 /**
- *free_listint2 - freess A link A list:::
- *@head: Pointer to A head Of A list:::
+ *free_listint2 - freess A link A lis
+ *@head: Pointer to A head Of A lis
  *free_listint2 - frees a linked list
  *Return: equal The void Void
  */
 void free_listint2(listint_t **head)
 {
 	listint_t *cursor;
-	listint_t **temp = head;
+	listint_t **temm = head;
 
-	if (temp != NULL)
+	if (temm != NULL)
 	{
 		while (*head != NULL)
 		{
@@ -20,6 +20,6 @@ void free_listint2(listint_t **head)
 			*head = (*head)->next;
 		}
 
-		*temp = NULL;
+		*temm = NULL;
 	}
 }
