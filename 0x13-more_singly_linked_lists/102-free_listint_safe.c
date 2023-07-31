@@ -1,42 +1,35 @@
+#include <stdlib.h>
 #include "lists.h"
 
 /**
-* free_listint_safe - freeRs A link list
-* @h: pointer to the first node in the linked list
-* This function can free lists with a loop
-* You should go though the list only once
-* Returns: the size of the list that was free’d
-* Return: number of elements in the freed list
-*/
+ * free_listint_safe - Frees a listint_t list.
+ *
+ * @h: A pointer to a pointer to the head of the linked list.
+ *
+ * Return: The size of the list that was freed.
+ */
 size_t free_listint_safe(listint_t **h)
 {
-	size_t lee = 0;
-	int doff;
-	listint_t *tepp;
-
-	if (!h || !*h)
-		return (0);
-
-	while (*h)
-	{
-		doff = *h - (*h)->next;
-		if (doff > 0)
-		{
-			tepp = (*h)->next;
-			free(*h);
-			*h = tepp;
-			lee++;
-		}
-		else
-		{
-			free(*h);
-			*h = NULL;
-			lee++;
-			break;
-		}
-	}
-
-	*h = NULL;
-
-	return (lee);
+size_t count = 0;
+listint_t *current, *temp;
+if (h == NULL || *h == NULL)
+return (0);
+current = *h;
+*h = NULL;
+while (current != NULL)
+{
+count++;
+if (current <= current->next)
+{
+temp = current->next;
+free(current);
+current = temp;
+}
+else
+{
+free(current);
+break;
+}
+}
+return (count);
 }
