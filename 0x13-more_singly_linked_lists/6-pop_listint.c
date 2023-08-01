@@ -5,17 +5,24 @@
 *@head: the head of A list
 *Prototype: int pop_listint(listint_t **head);
 *Return: the delete A node Of data
+*if the linked list is empty return 0: medhatDeif:
 */
 int pop_listint(listint_t **head)
 {
-listint_t *tepp;
-int nim;
-if (!head || !*head)
-return (0);
-nim = (*head)->n;
-tepp = (*head)->next;
-free(*head);
-*head = tepp;
-return (nim);
-}
+	listint_t *newhead;
+	int dawa;
 
+	if (*head == NULL)
+	{
+		return (0);
+	}
+	else
+
+		dawa = (*head)->n;
+	newhead = (*head)->next;
+	free(*head);
+
+	*head = newhead;
+
+	return (dawa);
+}
