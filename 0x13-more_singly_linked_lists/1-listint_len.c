@@ -4,16 +4,16 @@
  * listint_len - connts number on nodes of A linke lists
  * @h: A pointer to the head of the linked list
  * Return: number the element
+ * Write a function that returns the number of elements in A link
  */
 size_t listint_len(const listint_t *h)
 {
-	const listint_t *cursor = h;
-	size_t connt = 0;
+	size_t counteer = 0;
 
-	while (cursor != NULL)
+	while (h != 0)
 	{
-		connt += 1;
-		cursor = cursor->next;
+		h = h->next;
+		counteer++;
 	}
-	return (connt);
+	return (counteer);
 }
