@@ -1,14 +1,14 @@
 #include "lists.h"
 
 /**
- * insert_nodeint_at_index - return the nthe nodes of  link list
+ * insert_nodeint_at_index - return etehe nthe nodes of  link list
  * @head: pointer to the head of the list
  * @idx: mean index of the node Can be added
  * @n: content of the new node
  * Returns: the address of the nee node, or NULL if it failed
  * Return:  address ofo the nodes
  * if it is not possible to add the new node at index idx
- * do not add the new node and return NULL
+ * do not Add the new node aNd return NULL
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
