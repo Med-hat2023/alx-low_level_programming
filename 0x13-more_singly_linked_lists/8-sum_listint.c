@@ -6,6 +6,7 @@
  * Prototype: int sum_listint(listint_t *head);
  * Return: sum Of eth numbers
  * if the list is empty, return 0
+ * if the list is empty:MedhatDeif
  */
 int sum_listint(listint_t *head)
 {
