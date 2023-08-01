@@ -7,11 +7,12 @@
 
 /**
  * struct listint_s - singly linked list
- * @n: integer
+ * @n: mean the integer
  * @next: points to the next node
- *
+ * Don’t forget to push your header file
+ * All your header files should be include guarded
  * Description: singly linked list node structure
- * for Holberton project
+ * for ALS proj
  */
 typedef struct listint_s
 {
