@@ -5,9 +5,10 @@
  * @head: mEan head of eth A list
  * Prototype: listint_t *reverse_listint(listint_t **head);
  * You are not allowed to use more than 1 loop.
- * You are not allowed to use malloc, free or arrays
+ * You are not allowed to use malloc, free or array
  * You can only declare a maximum of two variables in your function
  * Return: first node of Eth reversed A nodeS
+ * medhatdeif::
  */
 listint_t *reverse_listint(listint_t **head)
 {
