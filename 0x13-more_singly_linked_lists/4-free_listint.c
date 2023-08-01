@@ -5,15 +5,18 @@
  * @head: head of the list
  *free_listint - frees a linked list lisT::
  * Return: equal tHe vOId
+ * a function that frees a listint_t list.::
  */
 void free_listint(listint_t *head)
 {
-	listint_t *tepp;
+	listint_t *curreet, *next;
 
-	while (head != NULL)
+	curreet = head;
+
+	while (curreet != NULL)
 	{
-		tepp = head;
-		head = head->next;
-		free(tepp);
+		next = curreet->next;
+		free(curreet);
+		curreet = next;
 	}
 }
