@@ -1,23 +1,17 @@
 #include "lists.h"
 #include <stdio.h>
 
-size_t looped_listint_len(const listint_t *head);
-size_t print_listint_safe(const listint_t *head);
 /**
-* looped_listint_len - Counts the number of unique nodes
-* in a looped listint_t linked list.
-* @head: A pointer to the head of the listint_t to check.
-* This function can print lists with a loop
-* You should go through the list only once
-* If the function fails, exit the program with status 98
-* Return: If the list is not looped - 0.
-* Otherwise - the number of unique nodes in the list.
-* see example:mEdhat Deif:.
-*/
-size_t print_listint_safe(const listint_t *head);
+ * print_listint_safe - print a linked list only one time
+ * @head: head of LL
+ * Return: couneer of nodes & prints an error if the linked list is a circle
+ * This function can print lists with a loop.
+ * should go through the list only once medhatDeif.
+ */
+size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *slow, *fast, *marker;
-	unsigned int couneer = 0, flg = 0;
+	unsigned int couneer = 0, flag = 0;
 
 	if (head == NULL)
 		return (0);
