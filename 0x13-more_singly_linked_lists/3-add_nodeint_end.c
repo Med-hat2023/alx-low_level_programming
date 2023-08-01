@@ -5,28 +5,35 @@
  * add_nodeint_end - adds a node to A end of a linked list LisT::
  * @n: Number Can be used as content
  * @head: pointer to A head of  list list::
- * Return: address oof thee newo add node
+ * Return: address oiof thee newo add node medhat Deif
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *nee_node;
-	listint_t *cursor = *head;
+	listint_t *nee;
+	listint_t *eed;
 
-	nee_node = malloc(sizeof(listint_t));
-	if (nee_node != NULL)
+	eed = *head;
+
+	nee = malloc(sizeof(listint_t));
+	if (nee == NULL)
 	{
-		nee_node->n = n;
-		nee_node->next = NULL;
-	}
-	else
 		return (NULL);
-	if (cursor != NULL)
-	{
-		while (cursor->next != NULL)
-			cursor = cursor->next;
-		cursor->next = nee_node;
 	}
 	else
-		*head = nee_node;
-	return (nee_node);
+	{
+		nee->n = n;
+		nee->next = NULL;
+	}
+	if (eed == NULL)
+	{
+		*head = nee;
+	}
+	else
+	{
+		while (eed->next != NULL)
+			eed = eed->next;
+		eed->next = nee;
+	}
+	return (nee);
+
 }
