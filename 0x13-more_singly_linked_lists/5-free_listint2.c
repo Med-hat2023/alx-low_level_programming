@@ -10,7 +10,7 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *currmnt;
+	listint_t *curreet;
 
 	if (head == NULL)
 		return;
@@ -19,9 +19,9 @@ void free_listint2(listint_t **head)
 
 	while (*head != NULL)
 	{
-		currmnt = (*head);
+		curreet = (*head);
 		*head = (*head)->next;
-		free(currmnt);
+		free(curreet);
 	}
 	head = NULL;
 }
