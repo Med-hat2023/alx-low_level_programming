@@ -4,16 +4,15 @@
  * free_listint_safe - prints a list:mEdhat Deif
  * @h: address of pointer to first node
  * This function can free lists with a loop
- * This function can free lists with a loop
  * You should go though the list only once
  * The function sets the head to NULL
  * Return: address of head
  */
 size_t free_listint_safe(listint_t **h)
 {
-	size_t v = 0;
+	size_t s = 0;
 	listint_t *head, *tepp;
-	long doff;
+	long diff;
 
 	if (!h)
 		return (0);
@@ -21,12 +20,13 @@ size_t free_listint_safe(listint_t **h)
 	*h = NULL;
 	while (head)
 	{
-		v++;
-		doff = head->next - head;
+		s++;
+		diff = head->next - head;
 		tepp = head;
 		free(tepp);
-		if (doff >= 0)
+		if (diff >= 0)
 			break;
 		head = head->next;
 	}
-	return (v);
+	return (s);
+}
