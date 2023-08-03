@@ -17,23 +17,18 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int nam = 0, mult = 1;
-	int lee;
+	int f;
+	unsigned int dec_val = 0;
 
-	if (b == '\0')
+	if (!b)
 		return (0);
 
-	for (lee = 0; b[lee];)
-		lee++;
-
-	for (lee -= 1; lee >= 0; lee--)
+	for (f = 0; b[f]; f++)
 	{
-		if (b[lee] != '0' && b[lee] != '1')
+		if (b[f] < '0' || b[f] > '1')
 			return (0);
-
-		nam += (b[lee] - '0') * mult;
-		mult *= 2;
+		dec_val = 2 * dec_val + (b[f] - '0');
 	}
 
-	return (nam);
+	return (dec_val);
 }
