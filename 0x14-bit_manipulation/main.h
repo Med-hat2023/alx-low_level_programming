@@ -8,7 +8,7 @@
  *       written in the 0x14-bit_manipulation directory.
  *       Alx Projects 2023::: Hadeer
  */
-
+int main(void);
 int get_bit(unsigned long int n, unsigned int index);
 unsigned int binary_to_uint(const char *b);
 int _putchar(char c);
