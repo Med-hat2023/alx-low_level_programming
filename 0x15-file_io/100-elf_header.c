@@ -3,13 +3,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+//Displayed information: (no less, no more,
+//do not include trailing whitespacedo not include trailing whitespace
+//
 /**
  * _strncmp - compare two strings
  * @s1: the first string
  * @s2: the second string
  * @n: the max number of bytes to compare
- *
+ 
+*Magic
+*Class
+*Data
+*Version
+*OS/ABI
+*ABI Version
+*Type
+*Entry point address
  * Return: 0 if the first n bytes of s1 and s2 are equal, otherwise non-zero
  */
 int _strncmp(const char *s1, const char *s2, size_t n)
