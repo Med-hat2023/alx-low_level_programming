@@ -1,11 +1,5 @@
-#include "main.h"
-#include <stdlib.h>
-
 /**
  * read_textfile- Read text file print to STDOUT.
- * where letters is the number of letters it should read and print
- * AUTH : Medhat Deif 
- * Date :7/08/2023
  * @filename: text file being read
  * @letters: number of letters to be read
  * Return: w- actual number of bytes read and printed
