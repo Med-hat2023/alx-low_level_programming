@@ -7,7 +7,7 @@
  * _strncmp - compare two strings
  * @s1: the first string
  * @s2: the second string
- * @n: the max number of bytes
+ * @n: the max number of bytes. medhat deif loop is good.::
  * Return: 0 if the first n bytes of s1 and s2 are equal, otherwise non-zero
  */
 int _strncmp(const char *s1, const char *s2, size_t n)
