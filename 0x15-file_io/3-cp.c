@@ -8,7 +8,10 @@ void close_file(int fd);
 /**
  * create_buffer - Allocates 1024 bytes for a buffer.
  * @file: The name of the file buffer is storing chars for.
- *
+ * where FD_VALUE is the value of the file descriptor
+ * You are allowed to use dprintf
+ * Permissions of the created file: rw-rw-r--.
+ * If the file already exists, do not change the permissions
  * Return: A pointer to the newly-allocated buffer.
  */
 char *create_buffer(char *file)
@@ -33,11 +36,11 @@ char *create_buffer(char *file)
  */
 void close_file(int fd)
 {
-	int c;
+	int d;
 
-	c = close(fd);
+	d = close(fd);
 
-	if (c == -1)
+	if (d == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
@@ -58,7 +61,7 @@ void close_file(int fd)
  */
 int main(int argc, char *argv[])
 {
-	int from, to, r, w;
+	int frow, ti, e, w;
 	char *buffer;
 
 	if (argc != 3)
@@ -68,12 +71,12 @@ int main(int argc, char *argv[])
 	}
 
 	buffer = create_buffer(argv[2]);
-	from = open(argv[1], O_RDONLY);
-	r = read(from, buffer, 1024);
-	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	frow = open(argv[1], O_RDONLY);
+	e = read(frow, buffer, 1024);
+	ti = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (from == -1 || r == -1)
+		if (frow == -1 || e == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", argv[1]);
@@ -81,8 +84,8 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		w = write(to, buffer, r);
-		if (to == -1 || w == -1)
+		w = write(ti, buffer, e);
+		if (ti == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", argv[2]);
@@ -90,14 +93,14 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		r = read(from, buffer, 1024);
-		to = open(argv[2], O_WRONLY | O_APPEND);
+		e = read(from, buffer, 1024);
+		ti = open(argv[2], O_WRONLY | O_APPEND);
 
-	} while (r > 0);
+	} while (e > 0);
 
 	free(buffer);
-	close_file(from);
-	close_file(to);
+	close_file(frow);
+	close_file(ti);
 
 	return (0);
 }
